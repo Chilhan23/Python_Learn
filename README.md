@@ -3,7 +3,7 @@
 
 1. **Clone Repository**
    ```bash
-   git clone [https://github.com/USERNAME_KAMU/Python_Learn.git](https://github.com/USERNAME_KAMU/Python_Learn.git)
+   git clone [https://github.com/Chilhan23/Python_Learn.git](https://github.com/Chilhan23/Python_Learn.git)
    cd Python_Learn
    ```
 
