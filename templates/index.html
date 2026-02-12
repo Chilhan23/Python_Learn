@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayhan's Hub | Toolbox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --text-light: #1e293b;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            min-height: 100vh;
+            color: var(--text-light);
+            background: #f1f5f9;
+            padding: 40px 20px;
+        }
+
+        .container-wrapper {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 { 
+            text-align: center; 
+            font-weight: 700; 
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+        }
+
+        .container { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 25px; 
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card { 
+            background: var(--card-bg);
+            padding: 30px; 
+            border-radius: 16px; 
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+            border-color: var(--primary);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .card-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        h3 { 
+            color: var(--text-light); 
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .info { 
+            font-size: 0.9rem; 
+            color: var(--text-muted); 
+            margin-bottom: 20px; 
+            line-height: 1.6;
+            min-height: 48px;
+        }
+
+        .formula-box {
+            background: #eff6ff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            border-left: 3px solid var(--primary);
+        }
+
+        input { 
+            width: 100%; 
+            padding: 12px 15px; 
+            margin: 8px 0; 
+            border-radius: 8px; 
+            border: 1px solid #cbd5e1; 
+            background: #ffffff; 
+            color: var(--text-light); 
+            outline: none; 
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        input::placeholder {
+            color: #94a3b8;
+        }
+
+        input:focus { 
+            border-color: var(--primary); 
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        button { 
+            width: 100%; 
+            padding: 13px; 
+            margin-top: 12px;
+            background: var(--primary);
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: 600; 
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button:hover { 
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .result { 
+            margin-top: 20px; 
+            padding: 15px; 
+            background: #dbeafe; 
+            border: 2px solid var(--primary); 
+            color: var(--text-light);
+            border-radius: 8px; 
+            text-align: center; 
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .container { 
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <div class="logo">🧮</div>
+        PKK Kalkulator Project
+    </h1>
+    <p class="subtitle">Kalkulator Matematika & Keuangan</p>
+    
+    <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⬛</div>
+                    <h3>Luas Persegi</h3>
+                </div>
+                <p class="info">Menghitung luas bidang dengan empat sisi yang sama panjang.</p>
+                <div class="formula-box">LUAS = SISI²</div>
+                <form method="POST">
+                    <input type="hidden" name="form_type" value="persegi">
+                    <input type="number" name="sisi" placeholder="Masukkan Sisi (s)" step="any" required>
+                    <button type="submit">Hitung Luas</button>
+                </form>
+                {% if res.persegi %} <div class="result">Hasil: {{ res.persegi }} </div> {% endif %}
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔺</div>
+                    <h3>Luas Segitiga</h3>
+                </div>
+                <p class="info">Menghitung luas bidang berdasarkan panjang alas dan tinggi.</p>
+                <div class="formula-box">LUAS = 0.5 × a × t</div>
+                <form method="POST">
+                    <input type="hidden" name="form_type" value="segitiga">
+                    <input type="number" name="alas" placeholder="Alas (a)" step="any" required>
+                    <input type="number" name="tinggi" placeholder="Tinggi (t)" step="any" required>
+                    <button type="submit">Hitung Luas</button>
+                </form>
+                {% if res.segitiga %} <div class="result">Hasil: {{ res.segitiga }} </div> {% endif %}
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⚪</div>
+                    <h3>Luas Bola</h3>
+                </div>
+                <p class="info">Menghitung luas permukaan kulit luar bidang bola (sferis).</p>
+                <div class="formula-box">LUAS = 4 × π × r²</div>
+                <form method="POST">
+                    <input type="hidden" name="form_type" value="bola">
+                    <input type="number" name="jari_jari" placeholder="Jari-jari (r)" step="any" required>
+                    <button type="submit">Hitung Luas</button>
+                </form>
+                {% if res.bola %} <div class="result">Hasil: {{ "%.2f"|format(res.bola) }} </div> {% endif %}
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <h3>BEP Unit</h3>
+                </div>
+                <p class="info">Menghitung titik impas untuk mengetahui volume penjualan minimal.</p>
+                <div class="formula-box">BEP = Biaya Tetap / (Harga - Var)</div>
+                <form method="POST">
+                    <input type="hidden" name="form_type" value="bep">
+                    <input type="number" name="biaya_tetap" placeholder="Biaya Tetap (FC)" step="any" required>
+                    <input type="number" name="biaya_variabel" placeholder="Biaya Variabel (VC)" step="any" required>
+                    <input type="number" name="harga_jual" placeholder="Harga Jual per Unit" step="any" required>
+                    <button type="submit">Hitung BEP</button>
+                </form>
+                {% if res.bep %} <div class="result">Hasil: {{ "%.2f"|format(res.bep) }} Unit</div> {% endif %}
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Rayhan's Hub</p>
+        </footer>
+    </div>
+</body>
+</html>
